@@ -1,10 +1,3 @@
-/*
-2048 V3.5
-×¢ÒâÊÂÏî
-1.±¾³ÌĞòÊ¹ÓÃ Microsoft Visual Studio 2019 + EasyX 20210224 ½øĞĞ±àĞ´
-2.ÎªÈ·±£³ÌĞòÄÜÕı³£ÔËĞĞ£¬Çë°²×°ÒÔÉÏÁ½Ïî£¬¿ÉÔÚÍøÂçÉÏÕÒµ½°²×°³ÌĞò
-3.³ÌĞòÖĞÊ¹ÓÃÁË´óÁ¿ĞÂº¯Êı£¬Çë²»ÒªÊ¹ÓÃ DEV-C++ ±àÒë£¬·ñÔò»á±¨´í
-*/
 #include<graphics.h>
 #include<bits/stdc++.h>
 #include<conio.h>
@@ -50,7 +43,7 @@ void color(int x, int y)
 }
 void print()
 {
-	settextstyle(24, 0, _T("Î¢ÈíÑÅºÚ"));
+	settextstyle(24, 0, _T("å¾®è½¯é›…é»‘"));
 	if (IsDarkMode) {
 		setbkcolor(RGB(16, 16, 16));
 		settextcolor(RGB(255, 255, 255));
@@ -67,17 +60,17 @@ void print()
 	solidroundrect(34, 15, 154, 80, 5, 5);
 	solidroundrect(162, 15, 282, 80, 5, 5);
 	solidroundrect(290, 15, 366, 80, 5, 5);
-	outtextxy(58, 25, _T("µ±Ç°µÃ·Ö"));
+	outtextxy(58, 25, _T("å½“å‰å¾—åˆ†"));
 	itoa(score, s, 10);
-	outtextxy(186, 25, _T("×î´óÊı×Ö"));
+	outtextxy(186, 25, _T("æœ€å¤§æ•°å­—"));
 	RECT r1 = { 34, 40, 154, 80 };
 	drawtext(s, &r1, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 	itoa(Maxn, s, 10);
 	RECT r2 = { 162, 40, 282, 80 };
 	drawtext(s, &r2, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 	RECT r3 = { 290, 15, 366, 80 };
-	drawtext(_T("ÉèÖÃ"), &r3, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-	settextstyle(32, 0, _T("Î¢ÈíÑÅºÚ"));
+	drawtext(_T("è®¾ç½®"), &r3, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+	settextstyle(32, 0, _T("å¾®è½¯é›…é»‘"));
 	settextcolor(RGB(255, 255, 255));
 	for (int i = 1; i <= 4; ++i)
 		for (int j = 1; j <= 4; ++j) {
@@ -184,11 +177,11 @@ int main()
 		move(cz);
 		print();
 		if (space == 0 && check()) {
-			if (IDNO == MessageBox(GetHWnd(), "ÄãÊ§°ÜÁË£¬ÓÎÏ·½áÊø¡£", _T("2048"), MB_OK)) break;
+			if (IDNO == MessageBox(GetHWnd(), "ä½ å¤±è´¥äº†ï¼Œæ¸¸æˆç»“æŸã€‚", _T("2048"), MB_OK)) break;
 			return 0;
 		}
 		if (Maxn == 2048) {
-			if (IDNO == MessageBox(GetHWnd(), "¹§Ï²Äã£¬³É¹¦ÁË¡£", _T("2048"), MB_OK)) break;
+			if (IDNO == MessageBox(GetHWnd(), "æ­å–œä½ ï¼ŒæˆåŠŸäº†ã€‚", _T("2048"), MB_OK)) break;
 			return 0;
 		}
 	}
