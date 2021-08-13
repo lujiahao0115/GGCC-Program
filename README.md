@@ -2,9 +2,9 @@
 
 ## 程序列表
 
-| 程序名称 | 版本 | 最后更新时间  |
-| -------- | ---- | ------------- |
-| 2048     | 3.5  | 2021年8月10日 |
+| 名称 | 版本 | 最后更新时间  |
+| ---- | ---- | ------------- |
+| 2048 | 3.5  | 2021年8月10日 |
 
 ## 程序说明
 
@@ -18,3 +18,18 @@
 
    
 
+# C++ Program
+
+## Program list
+
+| Name | Version | Last update time |
+| ---- | ------- | ---------------- |
+| 2048 | 3.5     | August 10, 2021  |
+
+## Program Description
+
+1. The program is written using Microsoft Visual Studio 2019 + EasyX 20210224.
+
+2. To ensure the normal operation of the program, please install the above two items. The installation program can be found on the Internet.
+
+3. A lot of new functions are used in the program, please do not use DEV-C++ to compile, otherwise an error will be reported.
