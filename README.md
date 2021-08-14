@@ -4,11 +4,11 @@
 
 | 名称 | 版本 | 最后更新时间  |
 | ---- | ---- | ------------- |
-| 2048 | 3.5  | 2021年8月10日 |
+| 2048 | 3.5  | 2021年8月13日 |
 
 ## 程序说明
 
-1. 程序使用 Microsoft Visual Studio 2019 + EasyX 20210224 进行编写。
+1. 程序使用 Microsoft Visual Studio 2019 和 EasyX 20210224 进行编写。
 
 2. 为确保程序能正常运行，请安装以上两项，可在网络上找到安装程序。
 
@@ -24,11 +24,11 @@
 
 | Name | Version | Last update time |
 | ---- | ------- | ---------------- |
-| 2048 | 3.5     | August 10, 2021  |
+| 2048 | 3.5     | August 13, 2021  |
 
 ## Program Description
 
-1. The program is written using Microsoft Visual Studio 2019 + EasyX 20210224.
+1. The program is written using Microsoft Visual Studio 2019 and EasyX 20210224.
 
 2. To ensure the normal operation of the program, please install the above two items. The installation program can be found on the Internet.
 
