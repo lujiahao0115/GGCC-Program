@@ -4,7 +4,7 @@
 
 | Name | Version | Last update time |
 | ---- | ------- | ---------------- |
-| 2048 | 3.5     | August 13, 2021  |
+| 2048 | 4.0     | August 13, 2021  |
 
 ## Program screenshots
 
@@ -12,11 +12,11 @@
 
 #### Light theme
 
-![2048-light](https://user-images.githubusercontent.com/88885257/129469128-ebf9e3a6-4b49-4d38-8226-86752ca663e0.png)
+![2048-light](https://user-images.githubusercontent.com/88885257/129475598-909153a4-f50d-4588-8357-db19518ec54f.png)
 
 #### Dark theme
 
-![2048-dark](https://user-images.githubusercontent.com/88885257/129469129-f4634199-fbd2-459e-87d0-1787edd6e0e0.png)
+![2048-dark](https://user-images.githubusercontent.com/88885257/129475602-4314a8b7-594f-4445-b518-91849e8c9a52.png)
 
 ## Program Description
 
