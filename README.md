@@ -8,7 +8,7 @@
 
 ## Program Description
 
-1. The program is written using Microsoft Visual Studio 2019 and EasyX 20210224.
+1. The program is written with Microsoft Visual Studio 2019 and EasyX 20210224.
 
 2. To ensure the normal operation of the program, please install the above two items. The installation program can be found on the Internet.
 
