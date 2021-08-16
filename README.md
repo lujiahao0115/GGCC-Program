@@ -1,28 +1,27 @@
-# C++ Program
+# C++ 程序
 
-## Program list
+## 程序列表
 
-| Name | Version | Last update time |
-| ---- | ------- | ---------------- |
-| 2048 | 4.0     | August 13, 2021  |
+| 名称 | 版本 | 最后更新时间  |
+| ---- | ---- | ------------- |
+| 2048 | 4.0  | 2021年8月15日 |
 
-## Program screenshots
+## 程序截图
 
 ### 2048
 
-#### Light theme
+#### 浅色主题
 
 ![2048-light](https://user-images.githubusercontent.com/88885257/129475598-909153a4-f50d-4588-8357-db19518ec54f.png)
 
-#### Dark theme
+#### 深色主题
 
 ![2048-dark](https://user-images.githubusercontent.com/88885257/129475602-4314a8b7-594f-4445-b518-91849e8c9a52.png)
 
-## Program Description
+## 程序说明
 
-1. The program is written with Microsoft Visual Studio 2019 and EasyX 20210224.
+1. 程序使用 Microsoft Visual Studio 2019 和 EasyX 20210224 进行编写。
 
-2. To ensure the normal operation of the program, please install the above two items. The installation program can be found on the Internet.
+2. 为确保程序能正常运行，请安装以上两项，可在网络上找到安装程序。
 
-3. A lot of new functions are used in the program, please do not use DEV-C++ to compile, otherwise an error will be reported.
-
+3. 程序中使用了大量新函数，请不要使用 DEV-C++ 编译，否则会报错。
