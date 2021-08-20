@@ -12,10 +12,14 @@ void init()
 	memset(a, 0, sizeof(a));
 	do x = rand() % 4 + 1, y = rand() % 4 + 1;
 	while (a[x][y] != 0);
-	a[x][y] = 2;
+	t = rand() % 6;
+	if (t == 0)a[x][y] = 4;
+	else a[x][y] = 2;
 	do x = rand() % 4 + 1, y = rand() % 4 + 1;
 	while (a[x][y] != 0);
-	a[x][y] = 2;
+	t = rand() % 6;
+	if (t == 0)a[x][y] = 4;
+	else a[x][y] = 2;
 }
 int check() {
 	int flag = 0;
@@ -43,7 +47,7 @@ void color(int x, int y)
 }
 void print()
 {
-	settextstyle(24, 0, _T("Î¢ÈíÑÅºÚ"));
+	settextstyle(24, 0, _T("å¾®è½¯é›…é»‘"));
 	if (IsDarkMode) {
 		setbkcolor(RGB(16, 16, 16));
 		settextcolor(RGB(255, 255, 255));
@@ -59,20 +63,20 @@ void print()
 	else setbkcolor(RGB(224, 224, 224));
 	solidroundrect(70, 15, 190, 80, 5, 5);
 	solidroundrect(210, 15, 330, 80, 5, 5);
-	outtextxy(94, 25, _T("µ±Ç°µÃ·Ö"));
+	outtextxy(94, 25, _T("å½“å‰å¾—åˆ†"));
 	itoa(score, s, 10);
-	outtextxy(234, 25, _T("×î´óÊı×Ö"));
+	outtextxy(234, 25, _T("æœ€å¤§æ•°å­—"));
 	RECT r1 = { 70, 44, 190, 80 };
 	drawtext(s, &r1, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 	itoa(Maxn, s, 10);
 	RECT r2 = { 210, 44, 330, 80 };
 	drawtext(s, &r2, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-	settextstyle(24, 0, _T("Î¢ÈíÑÅºÚ"));
+	settextstyle(24, 0, _T("å¾®è½¯é›…é»‘"));
 	if (IsDarkMode)setbkcolor(RGB(16, 16, 16));
 	else setbkcolor(RGB(240, 240, 240));
 	RECT r3 = { 0, 420, 400, 500 };
-	drawtext(_T("°´¿Õ¸ñ¼üÇĞ»»Ö÷Ìâ"), &r3, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-	settextstyle(32, 0, _T("Î¢ÈíÑÅºÚ"));
+	drawtext(_T("æŒ‰ç©ºæ ¼é”®åˆ‡æ¢ä¸»é¢˜"), &r3, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+	settextstyle(32, 0, _T("å¾®è½¯é›…é»‘"));
 	settextcolor(RGB(255, 255, 255));
 	for (int i = 1; i <= 4; ++i)
 		for (int j = 1; j <= 4; ++j) {
@@ -180,11 +184,11 @@ int main()
 		move(cz);
 		print();
 		if (space == 0 && check()) {
-			if (IDNO == MessageBox(GetHWnd(), "ÄãÊ§°ÜÁË£¬ÓÎÏ·½áÊø¡£", _T("2048"), MB_OK)) break;
+			if (IDNO == MessageBox(GetHWnd(), "ä½ å¤±è´¥äº†ï¼Œæ¸¸æˆç»“æŸã€‚", _T("2048"), MB_OK)) break;
 			return 0;
 		}
 		if (Maxn == 2048) {
-			if (IDNO == MessageBox(GetHWnd(), "¹§Ï²Äã£¬³É¹¦ÁË¡£", _T("2048"), MB_OK)) break;
+			if (IDNO == MessageBox(GetHWnd(), "æ­å–œä½ ï¼ŒæˆåŠŸäº†ã€‚", _T("2048"), MB_OK)) break;
 			return 0;
 		}
 	}
