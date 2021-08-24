@@ -11,25 +11,15 @@
 
 ### 2048
 
-#### 浅色主题
-
 ![2048-light](https://user-images.githubusercontent.com/88885257/129475598-909153a4-f50d-4588-8357-db19518ec54f.png)
-
-#### 深色主题
 
 ![2048-dark](https://user-images.githubusercontent.com/88885257/129475602-4314a8b7-594f-4445-b518-91849e8c9a52.png)
 
 ### 扫雷
 
-#### 选择难度
-
 ![屏幕截图 2021-08-24 205958](https://user-images.githubusercontent.com/88885257/130621625-fc0d2298-ffce-4fa5-b305-403e2b86f7f5.png)
 
-#### 自定义参数
-
 ![屏幕截图 2021-08-24 210246](https://user-images.githubusercontent.com/88885257/130621654-7b7a9a0a-e26e-4086-86cd-efcd2b2f5031.png)
-
-扫雷
 
 ![屏幕截图 2021-08-24 210612](https://user-images.githubusercontent.com/88885257/130621696-b9926986-2f42-42df-9899-f8ac98277ee6.png)
 
