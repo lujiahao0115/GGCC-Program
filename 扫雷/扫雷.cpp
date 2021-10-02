@@ -184,8 +184,8 @@ void maprint()
 			}
 			if (ma2[i][j] == 2)drawtext(_T("¡ñ"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 		}
-	setfillcolor(RGB(192, 192, 192));
-	setbkcolor(RGB(192, 192, 192));
+	setfillcolor(RGB(224, 224, 224));
+	setbkcolor(RGB(224, 224, 224));
 	solidroundrect(9, 10, 109, 70, 5, 5);
 	solidroundrect(119, 10, 219, 70, 5, 5);
 	r = { 9,10,109,40 };
@@ -269,7 +269,10 @@ int main()
 			else if (ma[xx][yy] == 9 && ma2[xx][yy] == 0)mi++;
 		}
 		getsy();
-		if (mi == 0 && sy <= 0) {
+		if (mi == 0 || sy-mi <= 0) {
+			for (int i = 1; i <= wid; ++i)
+				for (int j = 1; j <= hei; ++j) 
+					if (ma2[i][j] == 0)ma2[i][j] = 2;
 			maprint();
 			if (IDNO == MessageBox(GetHWnd(), "¹§Ï²Äã£¬ÄãÓ®ÁË¡£", _T("É¨À×"), MB_OK)) break;
 			return 0;
