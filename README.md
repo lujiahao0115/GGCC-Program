@@ -25,7 +25,7 @@
 
 ## 注意事项
 
-1. 程序使用 **Microsoft Visual Studio 2019** 和 **EasyX 20210224** 进行编写。
+1. 程序使用 Microsoft Visual Studio 2019 和 EasyX 20210224 进行编写。
 
 2. 为确保程序能正常运行，请**安装以上两项**，可在网络上找到安装程序。
 
