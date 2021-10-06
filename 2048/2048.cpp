@@ -1,7 +1,7 @@
 #include<graphics.h>
 #include<bits/stdc++.h>
 #include<conio.h>
-MOUSEMSG m;
+SYSTEMTIME sys;
 using namespace std;
 int a[6][6] = { 0 }, b[6][6] = { 0 };
 bool mv[6][6] = { 0 }, IsDarkMode = 0;
@@ -161,6 +161,8 @@ void move(char cz)
 int main()
 {
 	initgraph(400, 500);
+	if (sys.wHour >= 18 || sys.wHour <= 6)IsDarkMode = 1;
+	else IsDarkMode = 0;
 	if (IsDarkMode) {
 		setbkcolor(RGB(16, 16, 16));
 		settextcolor(RGB(255, 255, 255));
