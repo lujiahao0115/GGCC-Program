@@ -269,7 +269,7 @@ int main()
 			else if (ma[xx][yy] == 9 && ma2[xx][yy] == 0)mi++;
 		}
 		getsy();
-		if (mi == 0 || sy-mi <= 0) {
+		if (mi == 0 && sy == 0 || sy - mi <= 0) {
 			for (int i = 1; i <= wid; ++i)
 				for (int j = 1; j <= hei; ++j) 
 					if (ma2[i][j] == 0)ma2[i][j] = 2;
