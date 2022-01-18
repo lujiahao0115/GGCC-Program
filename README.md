@@ -17,9 +17,9 @@
 
 ### 2048
 
-![2048-light](https://user-images.githubusercontent.com/88885257/129475598-909153a4-f50d-4588-8357-db19518ec54f.png)
+![屏幕截图 2022-01-18 173354](https://user-images.githubusercontent.com/88885257/149912091-212b3a1e-c156-46ec-bc0b-d863c03f698d.png)
 
-![2048-dark](https://user-images.githubusercontent.com/88885257/129475602-4314a8b7-594f-4445-b518-91849e8c9a52.png)
+![屏幕截图 2022-01-18 173405](https://user-images.githubusercontent.com/88885257/149912109-68fe5518-8161-4ff4-9d3f-9b1800dd9155.png)
 
 ### 扫雷
 
@@ -31,7 +31,7 @@
 
 ## 注意事项
 
-1. 程序使用 Microsoft Visual Studio 2019 和 EasyX 20210224 进行编写。
+1. 程序使用 Microsoft Visual Studio 2022 和 EasyX 20211109 进行编写。
 
 2. 为确保程序能正常运行，请**安装以上两项**，可在网络上找到安装程序。
 
