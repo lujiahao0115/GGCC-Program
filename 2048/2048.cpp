@@ -3,6 +3,8 @@
 #include<conio.h>
 SYSTEMTIME sys;
 using namespace std;
+int clrtb[15][3] = { {190,24,93},{162,28,175},{126,34,206},{67,56,202},{29,78,216},{3,105,161},
+					 {15,118,110},{21,128,61},{77,124,15},{161,98,7},{194,65,12} };
 int a[6][6] = { 0 }, b[6][6] = { 0 };
 bool mv[6][6] = { 0 }, IsDarkMode = 0;
 int x, y, score = 0, space = 14, Maxn = 2, t;
@@ -28,23 +30,6 @@ int check() {
 			if (!a[i][j] || a[i][j] == a[i + 1][j] || a[i][j] == a[i - 1][j]
 				|| a[i][j] == a[i][j + 1] || a[i][j] == a[i][j - 1])return 0;
 }
-void color(int x, int y)
-{
-	int num = a[x][y];
-	if (num == 2)setbkcolor(RGB(190, 24, 93)), setfillcolor(RGB(190, 24, 93));
-	else if (num == 4)setbkcolor(RGB(162, 28, 175)), setfillcolor(RGB(162, 28, 175));
-	else if (num == 8)setbkcolor(RGB(126, 34, 206)), setfillcolor(RGB(126, 34, 206));
-	else if (num == 16)setbkcolor(RGB(67, 56, 202)), setfillcolor(RGB(67, 56, 202));
-	else if (num == 32)setbkcolor(RGB(29, 78, 216)), setfillcolor(RGB(29, 78, 216));
-	else if (num == 64)setbkcolor(RGB(3, 105, 161)), setfillcolor(RGB(3, 105, 161));
-	else if (num == 128)setbkcolor(RGB(15, 118, 110)), setfillcolor(RGB(15, 118, 110));
-	else if (num == 256)setbkcolor(RGB(21, 128, 61)), setfillcolor(RGB(21, 128, 61));
-	else if (num == 512)setbkcolor(RGB(77, 124, 15)), setfillcolor(RGB(77, 124, 15));
-	else if (num == 1024)setbkcolor(RGB(161, 98, 7)), setfillcolor(RGB(161, 98, 7));
-	else if (num == 2048)setbkcolor(RGB(194, 65, 12)), setfillcolor(RGB(194, 65, 12));
-	else if(IsDarkMode)setfillcolor(RGB(32, 32, 32));
-	else setfillcolor(RGB(224,224,224));
-}
 void print()
 {
 	settextstyle(24, 0, _T("微软雅黑"));
@@ -61,8 +46,8 @@ void print()
 	cleardevice();
 	if (IsDarkMode)setbkcolor(RGB(32, 32, 32));
 	else setbkcolor(RGB(224, 224, 224));
-	solidroundrect(70, 15, 190, 80, 5, 5);
-	solidroundrect(210, 15, 330, 80, 5, 5);
+	solidroundrect(70, 15, 190, 80, 6, 6);
+	solidroundrect(210, 15, 330, 80, 6, 6);
 	outtextxy(94, 25, _T("当前得分"));
 	itoa(score, s, 10);
 	outtextxy(234, 25, _T("最大数字"));
@@ -80,14 +65,30 @@ void print()
 	settextcolor(RGB(255, 255, 255));
 	for (int i = 1; i <= 4; ++i)
 		for (int j = 1; j <= 4; ++j) {
-			int x01 = 30 + (i - 1) * 80 + i * 4, y01 = 90 + (j - 1) * 80 + j * 4;
-			int x02 = 110 + (i - 1) * 80 + i * 4, y02 = 170 + (j - 1) * 80 + j * 4;
-			color(i, j);
-			solidroundrect(x01, y01, x02, y02, 10, 10);
+			int num = a[i][j], r, g, b;
+			int x01 = 25 + (i - 1) * 80 + i * 6, y01 = 90 + (j - 1) * 80 + j * 7;
+			int x02 = 105 + (i - 1) * 80 + i * 6, y02 = 170 + (j - 1) * 80 + j * 7;
+			if (num) {
+				for (int k = 1; k <= 11; ++k)
+					if (num == (1 << k)) {
+						r = clrtb[k - 1][0], g = clrtb[k - 1][1], b = clrtb[k - 1][2];
+						setbkcolor(RGB(r, g, b));
+						setfillcolor(RGB(r * 3 / 5, g * 3 / 5, b * 3 / 5));
+						solidroundrect(x01, y01 + 2, x02, y02 + 2, 6, 6);
+						setfillcolor(RGB(r, g, b));
+						solidroundrect(x01, y01, x02, y02, 6, 6);
+						break;
+					}
+			}
+			else {
+				if (IsDarkMode)setfillcolor(RGB(32, 32, 32));
+				else setfillcolor(RGB(224, 224, 224));
+				solidroundrect(x01, y01 + 2, x02, y02 + 2, 6, 6);
+			}
 			if (a[i][j] == 0)continue;
 			itoa(a[i][j], s, 10);
-			RECT r = { x01,y01,x02,y02 };
-			drawtext(s, &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+			RECT R = { x01,y01,x02,y02 };
+			drawtext(s, &R, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 		}
 }
 int same()
@@ -161,7 +162,8 @@ void move(char cz)
 int main()
 {
 	initgraph(400, 500);
-	if (sys.wHour >= 18 || sys.wHour <= 6)IsDarkMode = 1;
+	GetLocalTime(&sys);
+	if (sys.wHour >= 18 || sys.wHour <= 5)IsDarkMode = 1;
 	else IsDarkMode = 0;
 	if (IsDarkMode) {
 		setbkcolor(RGB(16, 16, 16));
