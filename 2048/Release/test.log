@@ -1,0 +1,7 @@
+﻿  2048.cpp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(32): warning C4715: “check”: 不是所有的控件路径都返回值
+  All 7 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  test.vcxproj -> E:\C++\神犇作品\2048\EasyX\2048\Release\2048.exe
