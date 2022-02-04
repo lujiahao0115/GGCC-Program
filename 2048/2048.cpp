@@ -188,12 +188,14 @@ int main()
 		move(cz);
 		print();
 		if (space == 0 && check()) {
-			if (IDNO == MessageBox(GetHWnd(), "你失败了，游戏结束。", _T("2048"), MB_OK)) break;
-			return 0;
-		}
-		if (Maxn == 2048) {
-			if (IDNO == MessageBox(GetHWnd(), "恭喜你，成功了。", _T("2048"), MB_OK)) break;
-			return 0;
+			if (Maxn >= 2048) {
+				if (IDNO == MessageBox(GetHWnd(), "恭喜你，成功了。", _T("2048"), MB_OK)) break;
+				return 0;
+			}
+			else {
+				if (IDNO == MessageBox(GetHWnd(), "你失败了，游戏结束。", _T("2048"), MB_OK)) break;
+				return 0;
+			}
 		}
 	}
 	_getch();
