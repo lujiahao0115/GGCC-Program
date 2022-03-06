@@ -17,9 +17,9 @@
 
 ### 2048
 
-![屏幕截图 2022-01-18 173354](https://user-images.githubusercontent.com/88885257/149912091-212b3a1e-c156-46ec-bc0b-d863c03f698d.png)
+![屏幕截图 2022-03-06 171212](https://user-images.githubusercontent.com/88885257/156916685-7579dfde-fc77-4bc1-a5d4-96aaed2f5116.png)
 
-![屏幕截图 2022-01-18 173405](https://user-images.githubusercontent.com/88885257/149912109-68fe5518-8161-4ff4-9d3f-9b1800dd9155.png)
+![屏幕截图 2022-03-06 171222](https://user-images.githubusercontent.com/88885257/156916689-642b6127-9128-4c08-9ad6-780f9950c35b.png)
 
 ### 扫雷
 
