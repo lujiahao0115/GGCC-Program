@@ -1,6 +1,6 @@
 ﻿  2048.cpp
-E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(73,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
-E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(77,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
-E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(110,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
-E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(36): warning C4715: “check”: 不是所有的控件路径都返回值
+E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(75,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(79,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(112,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+E:\C++\神犇作品\2048\EasyX\2048\2048.cpp(38): warning C4715: “check”: 不是所有的控件路径都返回值
   test.vcxproj -> E:\C++\神犇作品\2048\EasyX\2048\Debug\2048.exe

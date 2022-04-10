@@ -2,17 +2,19 @@
 #include<bits/stdc++.h>
 #include<conio.h>
 #define key_down(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
+#define key_up(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 0 : 1)
 SYSTEMTIME sys;
 LOGFONT f;
 RECT r;
-MOUSEMSG m;
+POINT p;
+HWND h = GetForegroundWindow();
 using namespace std;
 int clrtb[15][3] = { {190,24,93},{162,28,175},{126,34,206},{67,56,202},{29,78,216},{3,105,161},
 					 {15,118,110},{21,128,61},{77,124,15},{161,98,7},{194,65,12} };
 int a[6][6] = { 0 }, b[6][6] = { 0 };
 bool mv[6][6] = { 0 }, IsDarkMode = 0;
-int x, y, score = 0, space = 14, Maxn = 2, t;
-char cz, s[25];
+int x, y, score = 0, space = 14, Maxn = 2, t, cz;
+char s[25];
 void init()
 {
 	memset(a, 0, sizeof(a));
@@ -52,18 +54,18 @@ void print()
 	solidroundrect(430, 350, 520, 395, 40, 40);
 	settextstyle(26, 0, _T("Segoe Fluent Icons"));
 	if (IsDarkMode) {
-		r = { 465,350,520,395 };
+		r = { 476,354,510,390 };
 		settextcolor(RGB(0, 120, 215));
 		drawtext(_T("§B"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-		r = { 430,350,485,395 };
+		r = { 440,354,474,390 };
 		settextcolor(RGB(255, 255, 255));
 		drawtext(_T("§@"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 	}
 	else {
-		r = { 440,355,475,390 };
+		r = { 440,354,474,390 };
 		settextcolor(RGB(0, 120, 215));
 		drawtext(_T("§@"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-		r = { 475,355,510,390 };
+		r = { 476,354,510,390 };
 		settextcolor(RGB(0, 0, 0));
 		drawtext(_T("§B"), &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 	}
@@ -91,7 +93,7 @@ void print()
 						setbkcolor(RGB(r, g, b));
 						setlinecolor(RGB(r * 5 / 6, g * 5 / 6, b * 5 / 6));
 						setfillcolor(RGB(r, g, b));
-						fillroundrect(x01, y01, x02, y02, 6, 6);
+						fillroundrect(x01, y01, x02, y02, 8, 8);
 						break;
 					}
 			}
@@ -104,14 +106,13 @@ void print()
 					setfillcolor(RGB(255, 255, 255));
 					setlinecolor(RGB(224, 224, 224));
 				}
-				fillroundrect(x01, y01, x02, y02, 6, 6);
+				fillroundrect(x01, y01, x02, y02, 8, 8);
 			}
 			if (a[i][j] == 0)continue;
 			itoa(a[i][j], s, 10);
 			RECT R = { x01,y01,x02,y02 };
 			drawtext(s, &R, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 		}
-	Sleep(200);
 }
 int same()
 {
@@ -120,14 +121,14 @@ int same()
 			if (a[i][j] != b[i][j])return 0;
 	return 1;
 }
-void move(char cz)
+void move()
 {
 	int flag = 0;
 	memset(mv, false, sizeof(mv));
 	for (int i = 1; i <= 4; ++i)
 		for (int j = 1; j <= 4; ++j)
 			b[i][j] = a[i][j];
-	if (key_down(VK_LEFT)) {
+	if (cz==1) {
 		for (int j = 1; j <= 4; j++)
 			for (int i = 2; i <= 4; i++) {
 				if (!a[i][j])continue;
@@ -138,8 +139,9 @@ void move(char cz)
 					a[k - 1][j] = 2 * a[k][j], a[k][j] = 0, mv[k - 1][j] = true, score += a[k - 1][j];
 			}
 		flag = 1;
+		while (key_down(VK_LEFT) || key_down(0x41))continue;
 	}
-	else if (key_down(VK_UP)) {
+	else if (cz==2) {
 		for (int i = 1; i <= 4; i++)
 			for (int j = 2; j <= 4; j++) {
 				if (!a[i][j])continue;
@@ -150,8 +152,9 @@ void move(char cz)
 					a[i][k - 1] = 2 * a[i][k], a[i][k] = 0, mv[i][k - 1] = true, score += a[i][k - 1];
 			}
 		flag = 1;
+		while (key_down(VK_UP) || key_down(0x57))continue;
 	}
-	else if (key_down(VK_RIGHT)) {
+	else if (cz==3) {
 		for (int j = 1; j <= 4; j++)
 			for (int i = 3; i >= 1; i--) {
 				if (!a[i][j])continue;
@@ -161,8 +164,9 @@ void move(char cz)
 					a[k + 1][j] = 2 * a[k][j], a[k][j] = 0, mv[k + 1][j] = true, score += a[k + 1][j];
 			}
 		flag = 1;
+		while (key_down(VK_RIGHT) || key_down(0x44))continue;
 	}
-	else if (key_down(VK_DOWN)) {
+	else if (cz==4) {
 		for (int i = 1; i <= 4; i++)
 			for (int j = 3; j >= 1; j--) {
 				if (!a[i][j])continue;
@@ -173,6 +177,7 @@ void move(char cz)
 					a[i][k + 1] = 2 * a[i][k], a[i][k] = 0, mv[i][k + 1] = true, score += a[i][k + 1];
 			}
 		flag = 1;
+		while (key_down(VK_DOWN) || key_down(0x53))continue;
 	}
 	else return;
 	if (same() && check() == 0)return;
@@ -191,6 +196,16 @@ void move(char cz)
 	space++;
 	if (flag)print();
 } 
+int input()
+{
+	while (1) {
+		if (key_down(VK_LEFT) || key_down(0x41))return 1;
+		if (key_down(VK_UP) || key_down(0x57))return 2;
+		if (key_down(VK_RIGHT) || key_down(0x44))return 3;
+		if (key_down(VK_DOWN) || key_down(0x53))return 4;
+		if (key_down(VK_LBUTTON))return 5;
+	}
+}
 int main()
 {
 	initgraph(560,420);
@@ -213,12 +228,15 @@ int main()
 	init();
 	print();
 	while (1) {
-		//m = GetMouseMsg();
-		if (key_down(VK_SPACE)) {
-			IsDarkMode = (IsDarkMode + 1) % 2;
-			print();
+		cz = input();
+		if (cz==5) {
+			GetCursorPos(&p);
+			ScreenToClient(h,&p);
+			if (p.x >= 480 && p.x <= 506 && p.y >= 359 && p.y <= 385)IsDarkMode = 1,print();
+			else if(p.x >= 444 && p.x <= 470 && p.y >= 359 && p.y <= 385)IsDarkMode = 0,print();
+			while (key_down(VK_LBUTTON))continue;
 		}
-		move(cz);
+		move();
 		if (space == 0 && check()) {
 			if (Maxn >= 2048) {
 				if (IDNO == MessageBox(GetHWnd(), "¹§Ï²Äã£¬³É¹¦ÁË¡£", _T("2048"), MB_OK)) break;
