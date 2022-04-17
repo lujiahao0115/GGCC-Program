@@ -32,6 +32,10 @@
 
 ![屏幕截图 2021-08-24 210612](https://user-images.githubusercontent.com/88885257/130621696-b9926986-2f42-42df-9899-f8ac98277ee6.png)
 
+### 找到隐藏的牛
+
+![屏幕截图 2022-04-17 153446](https://user-images.githubusercontent.com/88885257/163705233-fb3a46e4-fbbd-404b-a626-481a30aacaec.png)
+
 ## 注意事项
 
 1. 程序使用 Microsoft Visual Studio 2022 和 EasyX 20211109 进行编写。
