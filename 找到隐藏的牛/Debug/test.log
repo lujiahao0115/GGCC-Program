@@ -1,0 +1,4 @@
+﻿  找到隐藏的牛.cpp
+E:\C++\神犇作品\找到隐藏的牛\EasyX\找到隐藏的牛\找到隐藏的牛.cpp(45,11): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+E:\C++\神犇作品\找到隐藏的牛\EasyX\找到隐藏的牛\找到隐藏的牛.cpp(46,12): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+  test.vcxproj -> E:\C++\神犇作品\找到隐藏的牛\EasyX\找到隐藏的牛\Debug\找到隐藏的牛.exe
