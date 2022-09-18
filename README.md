@@ -1,3 +1,5 @@
+[![Page Views Count](https://badges.toozhao.com/badges/01GD881AGC633K3RWQPPS51K4A/green.svg)](https://badges.toozhao.com/stats/01GD881AGC633K3RWQPPS51K4A "Get your own page views count badge on badges.toozhao.com")
+
 # GGCC 程序
 
 ## 列表
